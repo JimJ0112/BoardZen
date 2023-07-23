@@ -1,1 +1,1 @@
-# BoardZen
+# BoardZen App
