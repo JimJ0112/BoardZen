@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kanban!</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/kanban.js"></script>
+</head>
+<body onload="generateColumns()">
+    
+    <center>
+    <form onsubmit="preventSubmit()" id="UserInfoForm">
+        <label for="UsernameTB">User Name</label>
+        <input type="text" name="Username" id="UsernameTB">
+        <br/>
+        <div id="formInputsDivContainer">
+            <div id="formInputsDiv"> </div>
+            <div id="AddColumnDiv">
+                <div class="AddColumn" onclick="addColumnToForm()"> + Add Column </div>
+            </div>
+
+        </div>
+
+        <!--<input type="submit" value="Save" class="GreenButton">-->
+        <div class="GreenButton" onclick="preventSubmit()"> Save </div>
+    </form>
+    </center>
+
+    <frame id="NoFrame"></frame>
+
+
+    <div id="BoardContainer">
+
+    </div>
+    
+</body>
+</html>

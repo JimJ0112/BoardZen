@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+ 
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.GreenButton{
+    background-color: rgb(52, 162, 52);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+#formInputsDiv{
+    width: 300px;
+    height: auto;
+    min-height: 10px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin:5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    align-content: center;
+}
+
+.formColumnInput{
+    width: 250px;
+    height: 20px;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+    margin: auto;
+}
+
+.AddColumn{
+    width: 250px;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+  
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid gray;
+    margin: 10px;
+    margin-top: 0;
+
+}
+
+#UserInfoForm{
+    width: fit-content;
+    height: auto;
+    min-height: 100px;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 3px dashed rgb(205, 205, 205);
+    margin:10px;
+}
+
+
+/* Kanban board */
+#BoardContainer{
+    width: fit-content;
+    min-width: 70%;
+    max-width: 99%;
+    margin: auto;
+    height: auto;
+    min-height: 500px;
+    background-color: rgb(228, 227, 227);
+    display: none;
+
+   
+    grid-template-columns: repeat(auto-fit,200px);
+    grid-column-gap: 10px;
+    grid-row-gap:10px;
+    padding: 10px;
+    border-radius: 20px;
+    
+    
+
+}
+.boardColumn{
+
+    width: 200px;
+    height: auto;
+    min-height: 400px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bolder;
+    margin: auto;
+
+
+
+}
