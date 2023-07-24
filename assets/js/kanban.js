@@ -47,20 +47,47 @@ function generateUserInfo(){
 
 function generateColumns(){
     var UserInfoJSON = localStorage.getItem("UserInfo");
-    var BoardContainer = document.getElementById("BoardContainer");
+    var Board = document.getElementById("Board");
     if(UserInfoJSON != null && UserInfoJSON != ""){
         UserInfoJSON = JSON.parse(UserInfoJSON);
         console.log(UserInfoJSON[1].length);
         document.getElementById('UserInfoForm').style.display = "none";
         document.getElementById("BoardContainer").style.display = "grid";
+        document.getElementById("Board").style.display = "grid";
 
-        for(var i=0;i<UserInfoJSON[1].length;i++){
+
+        for (var i = 0; i < UserInfoJSON[1].length; i++){
+            
             var div = document.createElement("div");
+            var divHeader =  document.createElement("div");
+            var divContainter = document.createElement("div");
+            var divAdd = document.createElement("div");
+
+            divHeader.setAttribute("class", "boardColumnHeader");
+            divContainter.setAttribute("class", "boardColumnContainer");
+            divContainter.setAttribute("id", UserInfoJSON[1][i].ColumnName + "Container");
+            
+            divAdd.setAttribute("class", "boardColumnAddRow");
+            divAdd.setAttribute("onclick", "AddRow('" + UserInfoJSON[1][i].ColumnName + "Container" + "')");
+            
             div.setAttribute("class","boardColumn");
             div.setAttribute("id", "'" + UserInfoJSON[1][i].ColumnName);
-            div.innerText = UserInfoJSON[1][i].ColumnName;
-            BoardContainer.appendChild(div);
+            divHeader.innerText = UserInfoJSON[1][i].ColumnName;
+
+            divAdd.innerText = " + Add ";
+            div.appendChild(divHeader);
+            div.appendChild(divContainter);
+            div.appendChild(divAdd);
+            Board.appendChild(div);
 
         }
     }
+}
+
+
+
+function closeBoard() {
+    localStorage.setItem("UserInfo", "");
+    location.reload();
+
 }

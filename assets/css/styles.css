@@ -82,13 +82,37 @@ body{
 
 /* Kanban board */
 #BoardContainer{
-    width: fit-content;
-    min-width: 70%;
-    max-width: 99%;
+    
+    width: 90vw;
     margin: auto;
     height: auto;
     min-height: 500px;
     background-color: rgb(228, 227, 227);
+    display: none;
+    padding: 30px;
+    align-content: center;
+    margin-top: 50px;
+
+    border-radius: 20px;
+    /*
+    grid-template-columns: repeat(auto-fit,200px);
+    grid-column-gap: 10px;
+    grid-row-gap:10px;
+    padding: 20px;
+    border-radius: 20px;
+    align-content: center;
+    */
+    
+
+}
+
+#Board{
+
+    width: auto;
+    min-width: 80%;
+    margin: auto;
+    height: auto;
+    min-height: 500px;
     display: none;
 
    
@@ -97,10 +121,11 @@ body{
     grid-row-gap:10px;
     padding: 10px;
     border-radius: 20px;
-    
-    
+    align-content: center;
 
+    border:1px solid black;
 }
+
 .boardColumn{
 
     width: 200px;
@@ -112,6 +137,71 @@ body{
     font-weight: bolder;
     margin: auto;
 
+    /*
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 0;
+    */
+
+}
+
+.boardColumnHeader{
+    height: 50px;
+    /*border: 1px solid black;*/
+    text-align: center;
+    display: grid;
+    align-content: center;
+    border-radius: 20px 20px 0 0;
+    background-color: green;
+    color: white;
+    margin-bottom: 0;
+}
+
+.boardColumnContainer{
+    border: 1px solid gray;
+    display: grid;
+    margin-top: 0;
+    grid-row-gap: 0;
+    height: auto;
+    min-height: 10px;
+}
+
+.boardColumnAddRow{
+    cursor: pointer;
+    border: 2px dashed gray;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.467);
+
+    color: gray;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    height: 50px;
+
+}
 
 
+.boardColumnAddRow:hover{
+    color:black;
+}
+
+
+
+.CloseButton{
+    float: right;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 0;
+    /*border: 1px solid black;*/
+    padding:0;
+    text-align: right;
+    font-weight: lighter;
+    font-size: 30px;
+    cursor: pointer;
+    width: fit-content;
+    color: gray;
+}
+
+.CloseButton:hover{
+    color:black;
 }
