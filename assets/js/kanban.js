@@ -74,7 +74,7 @@ function generateColumns(){
             div.setAttribute("id", "'" + UserInfoJSON[1][i].ColumnName);
             divHeader.innerText = UserInfoJSON[1][i].ColumnName;
 
-            divAdd.innerText = " + Add ";
+            divAdd.innerText = " + Add  ";
             div.appendChild(divHeader);
             div.appendChild(divContainter);
             div.appendChild(divAdd);
