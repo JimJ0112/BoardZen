@@ -68,7 +68,7 @@ function generateColumns(){
             divContainter.setAttribute("id", UserInfoJSON[1][i].ColumnName + "Container");
             
             divAdd.setAttribute("class", "boardColumnAddRow");
-            divAdd.setAttribute("onclick", "AddRow('" + UserInfoJSON[1][i].ColumnName + "Container" + "')");
+            divAdd.setAttribute("onclick", "AddRow('" + UserInfoJSON[1][i].ColumnName + "Container','" +UserInfoJSON[1][i].ColumnName  +   "')");
             
             div.setAttribute("class","boardColumn");
             div.setAttribute("id", "'" + UserInfoJSON[1][i].ColumnName);
@@ -85,9 +85,89 @@ function generateColumns(){
 }
 
 
+// Add rows
+function AddRow(Containeridname,Colname){
+    var Containeridname = Containeridname;
+    var Colname = Colname;
+    var div = document.getElementById(Containeridname);
+
+    var row = document.createElement('div');
+    row.setAttribute("class",Colname+"Row");
+    row.setAttribute("contentEditable","true");
+    row.setAttribute("draggable","true");
+    div.appendChild(row);
+
+    addDragAndDrop();
+}
+
 
 function closeBoard() {
     localStorage.setItem("UserInfo", "");
     location.reload();
 
 }
+
+
+/*Drag and drop */
+
+
+function addDragAndDrop(){
+    var UserData = localStorage.getItem('UserInfo');
+    var containers = document.getElementsByClassName('boardColumnContainer');
+
+    UserData = JSON.parse(UserData);
+    
+    for(var i=0; i<UserData[1].length;i++){
+        var ColumnName = UserData[1][i].ColumnName + "Container";
+        var Container = document.getElementById(ColumnName);
+        var rows = Container.children;
+    
+
+
+        Array.prototype.forEach.call(Container.children, row => {
+            //console.log(row)
+
+            row.addEventListener('dragstart',()=>{
+                row.classList.add('dragging');
+                console.log(row);
+               
+            })
+
+            row.addEventListener('dragend',()=>{
+                row.classList.remove('dragging');
+                console.log(row);
+               
+            })
+
+     
+
+        });
+
+    }
+
+
+    // set event for containers
+
+    Array.prototype.forEach.call(containers, container => {
+        
+        container.addEventListener('dragover',e =>{
+           
+           e.preventDefault();
+           const row = document.getElementsByClassName('dragging')[0];
+           container.appendChild(row);
+           
+        })
+
+
+ 
+
+    });
+
+
+
+
+
+}
+
+
+

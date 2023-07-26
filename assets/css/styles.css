@@ -121,7 +121,7 @@ body{
     grid-row-gap:10px;
     padding: 10px;
     border-radius: 20px;
-    align-content: center;
+    align-content:start;
 
     border:1px solid black;
 }
@@ -130,12 +130,13 @@ body{
 
     width: 200px;
     height: auto;
-    min-height: 400px;
+    min-height: 200px;
     background-color: white;
     text-align: center;
     border-radius: 20px;
     font-weight: bolder;
     margin: auto;
+    align-self: start;
 
     /*
     display: grid;
@@ -158,12 +159,45 @@ body{
 }
 
 .boardColumnContainer{
-    border: 1px solid gray;
+   
     display: grid;
-    margin-top: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     grid-row-gap: 0;
     height: auto;
     min-height: 10px;
+
+}
+
+.boardColumnContainer > div{
+    height: auto;
+    min-height: 50px;
+    width: 180px;
+
+    cursor:grab;
+    border: 2px dashed gray;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.467);
+
+    color: gray;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+
+
+    /* wrapping text to div*/
+    display: inline-block;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
+
+
 }
 
 .boardColumnAddRow{
@@ -179,7 +213,6 @@ body{
     height: 50px;
 
 }
-
 
 .boardColumnAddRow:hover{
     color:black;
